@@ -104,8 +104,14 @@ h1, h2 {
     color: #fff; /* White heading color */
 }
 
-a {
+p a {
     color: #004080; /* White link color */
+    text-decoration: none;
+}
+
+
+a {
+    color: #fff; /* White link color */
     text-decoration: none;
 }
 
