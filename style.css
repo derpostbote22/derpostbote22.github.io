@@ -1,119 +1,131 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* --- Global Variables for easy color changes --- */
+:root {
+    --bg-color: #fafafa;        /* Very light grey background */
+    --card-bg: #ffffff;         /* White cards */
+    --text-main: #333333;       /* Dark grey text */
+    --text-muted: #666666;      /* Lighter grey for secondary text */
+    --accent-color: #2c5e50;    /* A professional deep teal/green */
+    --link-hover: #1abc9c;      /* Brighter teal for hovers */
+    --font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --- Reset & Base Styles --- */
+* {
     margin: 0;
     padding: 0;
-    background-color: #e6f7ff; /* Light blue background */
-    color: #333;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #004080; /* Dark blue header background */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-.logo {
-    flex: 1;
-}
-
-.language-switch {
-  flex: 1;
-  text-align: right;
-  padding-right: 20px;
-}
-
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
+/* --- Layout Utility --- */
+.container {
+    max-width: 800px; /* Keeps the content narrow and readable */
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
+/* --- Header Section --- */
+header {
+    padding: 80px 0 40px;
 }
 
-nav ul li {
-    margin: 0 15px;
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
+/* --- Section Styling --- */
 section {
-    padding: 40px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    margin-bottom: 60px;
 }
 
-section h2 {
-    color: #004080; /* Dark blue heading color */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+p {
+    margin-bottom: 15px;
 }
 
-li {
+/* Divider line */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 40px 0;
+}
+
+/* --- Project Grid (Flex/Grid) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid #e5e5e5;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--accent-color);
+}
+
+.project-card h3 {
+    font-size: 1.1rem;
     margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
 }
 
-li:before {
-    content: '\2022'; /* Unicode character for a bullet point */
-    color: #004080; /* Dark blue bullet point color */
-    font-weight: bold;
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Link Styling */
+.project-link {
     display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    position: absolute;
-}
-
-/* Adjust link styles */
-li a {
-    color: #004080; /* Dark blue link color */
     text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
 }
 
-li a:hover {
-    text-decoration: underline;
+.project-link:hover {
+    color: var(--link-hover);
 }
 
+/* --- Footer --- */
 footer {
+    padding: 40px 0;
     text-align: center;
-    padding: 20px;
-    background-color: #004080; /* Dark blue footer background */
-    color: #fff;
-}
-
-h1, h2 {
-    color: #fff; /* White heading color */
-}
-
-p a {
-    color: #004080; /* Blue link color */
-    text-decoration: none;
-}
-
-a {
-    color: #fff; /* White link color */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
 }
