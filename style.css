@@ -129,3 +129,31 @@ footer {
     border-top: 1px solid #e0e0e0;
     margin-top: 60px;
 }
+
+/* --- Social Icons Row --- */
+.social-row {
+    display: flex;
+    gap: 1.2rem;       /* Adjusts space between the icons */
+    margin-top: 1rem;  /* Space between name and icons */
+    align-items: center;
+}
+
+.social-row a {
+    display: inline-flex; /* Removes extra gaps under images */
+    text-decoration: none;
+}
+
+.social-row img {
+    height: 24px;      /* Sets a fixed height so all icons match size */
+    width: auto;       /* Maintains aspect ratio */
+    opacity: 0.6;      /* Slightly greyed out by default for a clean look */
+    filter: grayscale(100%); /* Optional: makes colorful logos black & white until hover */
+    transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.social-row img:hover {
+    opacity: 1;
+    filter: grayscale(0%); /* Brings back original color on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
